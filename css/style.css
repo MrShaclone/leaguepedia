@@ -1,108 +1,233 @@
-body{
-    background-color: #444;
-    font-family: 'Arial', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f1419 0%, #1e2328 100%);
+  color: #f0e6d2;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
 nav {
-    background-color: #333;
-    color: white;
-    padding: 1px;
-    text-align: center;
+  background: rgba(12, 20, 33, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #c89b3c;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.giant-card { /* card do campeão selecionado */
-  box-sizing: border-box;
-  width: 200px;
-  height: 200px;
-  background: rgb(224, 222, 222);
-  border: 2px solid rgba(55, 151, 10, 0.5);
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  border-radius: 17px;
+nav h1 {
   text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #c89b3c;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.giant-card {
+  margin: 1.5rem 1rem;
+  background: linear-gradient(145deg, #1e2328 0%, #3c3c41 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(200, 155, 60, 0.3);
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bolder;
-  color: black;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+.giant-card h4 {
+  font-size: 1.2rem;
+  color: #a09b8c;
+  font-weight: 500;
 }
 
 
+.champion-info {
+  margin: 1.5rem 1rem;
+  background: rgba(30, 35, 40, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(200, 155, 60, 0.2);
+}
 
-.card-champ { /* cards dos campeoes*/
-  box-sizing: border-box;
+.champion-info h2 {
+  font-size: 1.6rem;
+  color: #c89b3c;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.champion-info p {
+  color: #a09b8c;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.build {
+  margin-bottom: 2rem;
+}
+
+.list-build {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.item-build {
+  aspect-ratio: 1;
+  background: linear-gradient(145deg, #463714 0%, #5bc0de 20%, #463714 100%);
+  border-radius: 8px;
+  border: 2px solid #c89b3c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.item-build::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background: rgba(240, 230, 210, 0.3);
+  border-radius: 4px;
+}
+
+.item-build:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 155, 60, 0.4);
+  border-color: #f0e6d2;
+}
+
+
+.spells {
+  margin-bottom: 2rem;
+}
+
+.list-spells {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.spell {
   width: 60px;
-  height: 65px;
-  background: rgb(224, 222, 222);
-  border: 2px solid rgba(55, 151, 10, 0.5);
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  border-radius: 17px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s;
+  height: 60px;
+  background: linear-gradient(145deg, #1e2328 0%, #3c3c41 100%);
+  border: 2px solid #c89b3c;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  user-select: none;
-  font-weight: bolder;
-  color: black;
-  margin-top: 25px;
-  margin-left: 20px;
-  float: left;
-
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-.card-champ:hover {
-  border: 2px solid rgba(30, 63, 14, 0.5);
+.spell p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #c89b3c;
+  margin: 0;
 }
 
-.cards{ /* container das cards dos campeoes */
-  margin-top: 150px;
-  display: flex;
-  justify-content: center;
+.spell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 155, 60, 0.4);
+  border-color: #f0e6d2;
 }
 
-.champion-info{ /* container de informações do campeão */
-  margin-top: 20px;
-  text-align: center;
-  color: white;
+
+.cards {
+  margin: 1.5rem 1rem;
+  background: rgba(30, 35, 40, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(200, 155, 60, 0.2);
+  min-height: 120px;
 }
 
-.item-build{ /* cards de itens do campeão */
-  box-sizing: border-box;
-  width: 50px;
-  height: 55px;
-  background: rgb(224, 222, 222);
-  border: 2px solid rgba(55, 151, 10, 0.5);
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bolder;
-  color: black;
-  margin-left: 5px;
-  float: left;
+.cards-champs {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1rem;
 }
 
-.spell{ /* cards de feitiços do campeão */
-  box-sizing: border-box;
-  width: 40px;
-  height: 45px;
-  background: rgb(224, 222, 222);
-  border: 2px solid rgba(55, 151, 10, 0.5);
-  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
-  border-radius: 4px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bolder;
-  color: black;
-  margin-left: 5px;
-  margin-top: 10px;
-  float: left;
+
+@media (max-width: 480px) {
+  nav h1 {
+    font-size: 1.5rem;
+  }
+
+  .giant-card {
+    margin: 1rem 0.75rem;
+    padding: 1.5rem;
+    min-height: 160px;
+  }
+
+  .champion-info {
+    margin: 1rem 0.75rem;
+    padding: 1.25rem;
+  }
+
+  .champion-info h2 {
+    font-size: 1.4rem;
+  }
+
+  .list-build {
+    gap: 0.5rem;
+  }
+
+  .spell {
+    width: 50px;
+    height: 50px;
+  }
+
+  .spell p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .list-build {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.item-build:empty {
+  background: linear-gradient(90deg, #463714 0px, #5bc0de 40px, #463714 80px);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
 }
