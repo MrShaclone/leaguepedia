@@ -1,0 +1,19 @@
+{
+  "name": "LeaguePedia",
+  "short_name": "Lpedia",
+  "description": "Aplicativo mal feito para converter moedas",
+  "start_url": "https://mrshaclone.github.io/leaguepedia/",
+  "background_color": "#444",
+  "theme_color": "#ddd",
+  "scope": "https://mrshaclone.github.io/leaguepedia/",
+  "display": "standalone",
+  "lang": "pt-br",
+  "dir": "auto",
+  "icons": [
+  ],
+  "categories": [
+    "util"
+  ],
+  "id": "pwa_testee",
+  "orientation": "any"
+}
