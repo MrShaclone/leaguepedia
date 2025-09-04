@@ -1,7 +1,7 @@
 const URL = "https://ddragon.leagueoflegends.com/cdn/15.16.1/data/pt_BR/champion.json";
 const IMAGE_URL = "https://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/";
 
-// URL da API dos itens agora usa a versão em inglês
+// Url da API dos itens
 const ITEM_API_URL = "https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/item.json"; // URL da API dos itens
 
 const cardsContainer = document.querySelector(".cards-champs"); // Pegando o container dos cards
@@ -66,7 +66,7 @@ async function mostrarCampeao(champ) {
   // Chama a API local para pegar a build do campeão
   try {
     const response = await fetch(`http://localhost:3000/builds/${champ.name.toLowerCase()}`);
-    if (!response.ok) throw new Error("Erro ao buscar build");
+    if (!response.ok) throw new Error("Api de build indisponível");
 
     const build = await response.json();
 
@@ -90,7 +90,7 @@ for (const item of build) {
 }
   } catch (error) {
     console.error(error);
-    buildList.innerHTML = "<p>Erro ao carregar build.</p>";
+    buildList.innerHTML = "<p>Api de build indisponível.</p>";
   }
 }
 

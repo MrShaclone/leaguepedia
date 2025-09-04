@@ -4,9 +4,9 @@
   "description": "Aplicativo mal feito para converter moedas",
   "start_url": "https://mrshaclone.github.io/leaguepedia/",
   "background_color": "#444",
-  "theme_color": "#ddd",
+  "theme_color": "none",
   "scope": "https://mrshaclone.github.io/leaguepedia/",
-  "display": "standalone",
+  "display": "fullscreen",
   "lang": "pt-br",
   "dir": "auto",
   "icons": [
