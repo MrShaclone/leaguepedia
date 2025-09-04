@@ -1,10 +1,9 @@
 {
   "name": "LeaguePedia",
   "short_name": "Lpedia",
-  "description": "Aplicativo mal feito para converter moedas",
+  "description": "Aplicativo não oficial para acompanhar builds e lores dos campeões de League of Legends",
   "start_url": "https://mrshaclone.github.io/leaguepedia/",
   "background_color": "#444",
-  "theme_color": "none",
   "scope": "https://mrshaclone.github.io/leaguepedia/",
   "display": "fullscreen",
   "lang": "pt-br",
