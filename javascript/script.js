@@ -48,6 +48,7 @@ async function mostrarCampeao(champ) {
     <img src="${IMAGE_URL + champ.image.full}" style="max-width: 300px;">
   `;
   championName.textContent = champ.name;
+  topo(); // Rola a página para o topo
 
   // Requisição para pegar a lore e função do campeão
   const resp = await fetch(`https://ddragon.leagueoflegends.com/cdn/15.16.1/data/pt_BR/champion/${champ.id}.json`);
@@ -114,6 +115,13 @@ async function getItemImage(itemName) {
     console.error("Erro ao buscar imagem do item:", error);
     return 'https://ddragon.leagueoflegends.com/cdn/15.16.1/img/item/undefined.png';  // Retorna uma imagem padrão em caso de erro
   }
+}
+
+function topo() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Para uma rolagem suave
+  });
 }
 
 // Inicia a chamada para pegar os campeões e gerar os cards
