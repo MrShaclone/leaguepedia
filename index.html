@@ -46,13 +46,17 @@
       </ul>
     </div>
        
-    <script src="javascript/script.js">
-        if(typeof navigator !== 'undefined'){
-            navigator.serviceWorker.register('pwabuilder-sw.js');
-        }
-        if('setAppBagde' in navigator){
+    <script src="javascript/script.js"></script>
+
+    <script>
+		if(typeof navigator.serviceWorker !== "undefined"){
+			navigator.serviceWorker.register('pwabuilder-sw.js');
+		}
+        if('setAppBadge' in navigator){
             navigator.setAppBadge(1);
         }
+        Notification.requestPermission();
     </script>
+    
 </body>
 </html>
