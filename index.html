@@ -46,6 +46,13 @@
       </ul>
     </div>
        
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js">
+        if(typeof navigator !== 'undefined'){
+            navigator.serviceWorker.register('pwabuilder-sw.js');
+        }
+        if('setAppBagde' in navigator){
+            navigator.setAppBadge(1);
+        }
+    </script>
 </body>
 </html>
